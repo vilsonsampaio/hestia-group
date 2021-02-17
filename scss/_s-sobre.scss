@@ -1,0 +1,290 @@
+.s-sobre {
+  position: relative;
+
+  width: 100%;
+  height: 900px;
+
+  background: #27272a;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 65%;
+    height: 100%;
+
+    background: #27272a;
+
+    z-index: 2;
+
+    transition: width 0.3s ease;
+  }
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+    width: 35%;
+    height: 100%;
+
+    background: #edd100;
+
+    z-index: 2;
+
+    transition: width 0.3s ease-out;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 648px 360px;
+    gap: 120px;
+
+    height: 100%;
+
+    padding: 120px 0;
+  }
+
+  .left, .right {
+    overflow: hidden;
+
+    z-index: 4;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 648px;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  .video-thumb {
+    position: relative;
+
+    width: 100%;
+    height: 396px;
+    
+    transition: transform 0.25s ease-out;
+
+    cursor: pointer;
+
+    .thumb {
+      width: 100%;
+      height: 396px;
+
+      object-fit: cover;
+
+      border-radius: 4px;
+      
+      overflow: hidden
+    }
+
+    .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+
+  .title {
+    margin-top: 32px;
+
+    color: #ffffff;
+
+    text-align: left;
+
+    transition: transform 0.25s ease-out;
+  }
+
+  .content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    transition: transform 0.25s ease-out;
+
+    .description {
+      min-height: 160px;
+      max-width: 360px;
+
+      color: #ffffff;
+    }
+
+    .btn-primary {
+      width: 192px;
+      height: 68px;
+
+      color: #27272a;
+    }
+  }
+
+  .open-tab-button {
+    position: relative;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 170px;
+    height: 170px;
+
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.2;
+
+    color: #000000;
+
+    transition: opacity 0.3s ease;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+
+      width: 164px;
+      height: 164px;
+
+      border: solid 1px #000000;
+      border-radius: 50%;
+
+      transition: transform 1s ease;
+    }
+
+    &.open-o-que-button {
+      opacity: 0;
+      pointer-events: none;
+
+      color: #FFF;
+
+      &::after {
+        border-color: #FFF;
+      }
+    }
+  }
+
+  &.opened-o-que {
+    &::before {
+      width: 65%;
+    }
+
+    &::after {
+      width: 35%;
+    }
+    
+    .right {
+      > img,
+      .title,
+      .content {
+        display: none;
+
+        transform: translateX(0);
+      }
+    }
+
+    .open-o-que-button {
+      opacity: 0;
+      pointer-events: none;
+
+      transition: opacity 0.3s ease;
+
+      &::after {
+        transform: scale(30);
+      }
+    }
+  }
+
+  &.opened-como {
+    .open-como-button {
+      opacity: 0;
+      pointer-events: none;
+
+      &::after {
+        transform: scale(30);
+      }
+    }
+
+    // new elements
+    &::before {
+      width: 35%;
+    }
+
+    &::after {
+      width: 65%;
+    }
+
+    .left {
+      width: 100%;
+      justify-content: flex-end;
+
+      .video-thumb,
+      .title,
+      .content {
+        display: none;
+  
+        transform: translateX(-200%);
+      }
+    }
+
+    .right {
+      align-items: flex-start;
+      justify-content: center;
+      
+      width: 100%;
+
+      > img {
+        width: 100%;
+
+        border-radius: 4px;
+      }
+
+      .title, .description {
+        color: #18181B;
+      }
+
+      .btn-primary {
+        background: #18181B;
+        color: #FFFFFF!important;
+      }
+    }
+
+    .container {
+      grid-template-columns: 360px 648px;
+    }
+
+    .open-o-que-button {
+      opacity: 1; 
+
+      pointer-events: initial;
+      
+      &::after {
+        transform: scale(1);
+
+        transition: transform 1s ease;
+      }
+    }
+  }
+
+  
+}
