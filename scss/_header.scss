@@ -9,12 +9,24 @@
 
   width: 80px;
   height: 80px;
-  
-  background: #66D458;
-  
+
+  background: #66d458;
+
   border-radius: 50%;
 
   z-index: 20;
+}
+
+@media (max-width: 1200px) {
+  .btn-wpp {
+    width: 60px;
+    height: 60px;
+
+    > svg {
+      width: 60%;
+      height: auto;
+    }
+  }
 }
 
 header {
@@ -29,39 +41,135 @@ header {
   .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
     height: 100%;
+  }
 
-    .logo {
+  .logo {
+    > svg {
       width: auto;
       height: 44px;
     }
+  }
 
-    > nav {
+  .menu-desktop {
+    display: flex;
+    align-items: center;
+
+    margin-left: auto;  
+
+    a,
+    button {
+      color: #FFFFFF;
+
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+
+      outline: none;
+    }
+
+    > a {
+      margin: 0 24px;
+
+      &.proposta {
+        margin-left: 29px;
+      }
+    }
+
+    ul {
       display: flex;
       align-items: center;
+      gap: 32px;
+    }
+  }
 
-      a, button {
-        color: #fff;
+  .menu-mobile,
+  .menu-mobile-btn {
+    display: none;
+  }
+}
 
-        font-family: 'Manrope', sans-serif;
-        font-weight: 700;
+@media (max-width: 1200px) {
+  header {
+    .menu-desktop {
+      display: none;
+    }
+
+    .menu-mobile-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 24px;
+      height: 24px;
+
+      margin-left: auto;
+      padding: 4px 3px;
+
+      outline: none;
+
+      &.opened {
+        display: none;
+      }
+    }
+
+    .menu-mobile {
+      position: fixed;
+      top: 72px;
+      left: 0;
+
+      display: block;
+
+      width: 100%;
+      height: calc(100vh - 72px);
+
+      z-index: 10;
+
+      background: #27272a;
+
+      transform: translateY(100%);
+      pointer-events: none;
+
+      transition: transform 0.2s ease;
+
+      &.opened {
+        transform: translateY(0);
+        pointer-events: initial;
       }
 
-      > a {
-        margin: 0 24px;
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
 
-        &.proposta {
-          margin-left: 29px;
+      a,
+      button {
+        color: #FFFFFF;
+  
+        font-family: 'Manrope', sans-serif;
+        font-weight: 700;
+  
+        outline: none;
+      }
+      
+      .nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        
+        margin: 72px 0;
+
+        li {
+          text-align: center;
         }
       }
 
-      ul {
-        display: flex;
-        align-items: center;
-        gap: 32px;
+      .contato {
+        margin-top: 16px;
       }
+
+      
     }
   }
 }

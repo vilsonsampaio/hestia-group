@@ -43,32 +43,6 @@ textarea {
   appearance: none;
 }
 
-
-
-
-
-.container {
-  width: 1158px;
-
-  max-width: 1158px;
-
-  margin: 0 auto;
-  padding: 0px 15px;
-}
-/*
-@media (max-width: 1440px) {
-  .container {
-    width: 1100px;
-  }
-}
-
-@media (max-width: 1050px) {
-  .container {
-    width: 100%;
-  }
-}
-*/
-
 // Animação loading
 @keyframes is-rotating {
   to {
@@ -115,6 +89,21 @@ textarea {
 }
 
 // Definição de outros estilos
+.container {
+  width: 1158px;
+
+  margin: 0 auto;
+  padding: 0px 15px;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 90%;
+
+    max-width: 1158px;
+  }
+}
+
 .btn-primary {
   display: flex;
   align-items: center;
@@ -172,6 +161,12 @@ textarea {
   color: #000;
 }
 
+@media (max-width: 768px) {
+  .title {
+    font-size: 32px;
+  }
+}
+
 .subtitle {
   font-weight: 400;
   font-size: 18px;
@@ -185,4 +180,3 @@ textarea {
     margin-top: 10px;
   }
 }
-

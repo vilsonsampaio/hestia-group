@@ -171,11 +171,39 @@
   .form-image {
     position: absolute;
     top: -24px;
-    right: 0;
+    right: 20px;
 
     width: 456px;
     height: 675px;
 
     object-fit: cover;
+  }
+}
+
+@media (max-width: 1200px) {
+  .s-proposta {
+    background: #f4f4f5;
+    
+    border-radius: 4px;
+
+    .form-content {
+      max-width: 100%;
+
+      padding: 72px 0;
+    }
+
+    .invoice-form {
+      max-width: initial;
+
+      .btn-form {
+        max-width: inherit;
+
+        margin-left: 0;
+      }
+    }
+
+    .form-image {
+      display: none;
+    }
   }
 }

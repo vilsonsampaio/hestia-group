@@ -114,3 +114,9 @@
     }
   }
 }
+
+@media (max-width: 1200px) {
+  .gallery-fullscreen {
+    display: none;
+  }
+}

@@ -113,3 +113,51 @@
     }
   }
 }
+
+@media (max-width: 1200px) {
+  .s-parceiros {
+    .slide-parceiros {
+      .chevron-left, .chevron-right {
+        top: 25%;
+      }
+
+      .chevron-left {
+        left: 0;
+      }
+      
+      .chevron-right {
+        right: 0;
+      }
+
+      .swiper-slide {
+        .content {
+          flex-direction: column;
+        }
+
+        .partner-pic {
+          width: 45vw;
+          height: 45vw;
+        }
+
+        .text {
+          margin-top: 36px;
+          margin-left: 0;
+
+          h5, h2, p {
+            text-align: center;
+          }
+
+          h2 {
+            font-size: 32px;
+          }
+
+          .partner-services-icons {
+            justify-content: center;
+
+            margin-top: 55px;
+          }
+        }
+      }
+    }
+  }
+}

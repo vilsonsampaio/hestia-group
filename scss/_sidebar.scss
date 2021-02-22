@@ -18,9 +18,11 @@ aside#contact {
   align-items: flex-start;
   justify-content: flex-start;
 
-  width: 552px;
+  width: 100%;
   height: 100vh;
-
+  
+  max-width: 552px;
+  
   padding: 25px 50px;
 
   background-color: #ffffff;
@@ -45,9 +47,9 @@ aside#contact {
     button {
       width: 168px;
 
-      padding: 8px 0; 
+      padding: 20px 0; 
       
-      line-height: 32px;
+      line-height: 1.2;
       
       color: #18191F;
 
@@ -173,6 +175,59 @@ aside#contact {
       .btn-form {
         flex: 1;
       }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  aside#contact {
+    max-width: 100%;
+
+    padding: 25px 30px;
+
+    .close-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 35px;
+      height: 35px;  
+      
+      > svg {
+        width: 80%;
+        height: auto;
+      }
+    }
+
+    .title {
+      font-size: 30px;
+    }
+
+    .tab-nav-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      max-width: 360px;
+
+      button {
+        width: 100%;
+      }
+    }
+
+    form.sidebar-form .submit-container {
+      flex-direction: column;
+
+      .file-input {
+        width: 100%;
+
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+
+      .btn-form {
+        flex: initial;
+      }
+
     }
   }
 }

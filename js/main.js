@@ -14,13 +14,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // Inicializando slides
   // Hero
   const slideBanner = new Swiper('.s-banner', {
-    effect: 'fade',
     autoplay: {
       delay: 6000,
     },
+    loop: true,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
+    },
+  });
+
+  // Hero
+  const slideSobreMobile = new Swiper('.s-sobre-mobile .slide-container', {
+    loop: true,
+    navigation: {
+      prevEl: '.prev-slide',
+      nextEl: '.next-slide',
     },
   });
 
@@ -85,13 +94,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // Adicionando o abre-fecha da sidebar com formulário de contato
   // Botão pra abrir
   document
-    .querySelector('header nav button.contato')
-    .addEventListener('click', (event) => {
-      event.preventDefault();
-
-      document.querySelector('html').classList.add("open-form");
+    .querySelectorAll('header button.contato')
+    .forEach(element => {
+      element.addEventListener('click', (event) => {
+        event.preventDefault();
+  
+        document.querySelector('html').classList.add("open-form");
+      })
     })
   ;
+  
   // Botão pra fechar
   document
     .querySelector('aside#contact .close-button')
@@ -194,32 +206,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Proposta
   // Condicionando campos do formulário
+  const checkboxes = document.querySelectorAll('.s-proposta .invoice-form .options .checkbox');
   const inputCheckbox = document.querySelector('.s-proposta .invoice-form .options input#implantation');
   const conditionalInputs = document.querySelector('.s-proposta .invoice-form .conditional-inputs');
   
   // Adicionando event listener para o campo que irá condicionar o formulário
-  document
-    .querySelectorAll('.s-proposta .invoice-form .options .checkbox')
-    .forEach(element => {
-      element.addEventListener('click', (event) => {
-        checkboxes.forEach((element) => element.classList.remove('checked'));
-        
-        event.currentTarget.classList.add('checked');
+  checkboxes.forEach(element => {
+    element.addEventListener('click', (event) => {
+      checkboxes.forEach((element) => element.classList.remove('checked'));
+      
+      event.currentTarget.classList.add('checked');
 
-        inputCheckbox.value = event.currentTarget.innerText;
+      inputCheckbox.value = event.currentTarget.innerText;
 
-        if (inputCheckbox.value == 'sim') {
-          conditionalInputs.classList.add("hide");
-          conditionalInputs.nextElementSibling.firstElementChild.innerText = 'Observações';
-          conditionalInputs.nextElementSibling.lastElementChild.placeholder = '';
-        } else {
-          conditionalInputs.classList.remove("hide");
-          conditionalInputs.nextElementSibling.firstElementChild.innerText = 'Descrição dos colaboradores';
-          conditionalInputs.nextElementSibling.lastElementChild.placeholder = 'Ex: 03 porteiros, 02 ASG, 01 supervisor, 02 jardineiros';
-        }
-      });
-    })
-  ;
+      if (inputCheckbox.value == 'sim') {
+        conditionalInputs.classList.add("hide");
+        conditionalInputs.nextElementSibling.firstElementChild.innerText = 'Observações';
+        conditionalInputs.nextElementSibling.lastElementChild.placeholder = '';
+      } else {
+        conditionalInputs.classList.remove("hide");
+        conditionalInputs.nextElementSibling.firstElementChild.innerText = 'Descrição dos colaboradores';
+        conditionalInputs.nextElementSibling.lastElementChild.placeholder = 'Ex: 03 porteiros, 02 ASG, 01 supervisor, 02 jardineiros';
+      }
+    });
+  });
 
   // Configurando envio do formulário
   document
@@ -228,19 +238,6 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
 
       alert("Submitou formulário de proposta");
-    })
-  ;
-
-
-
-  // Newsletter
-  // Configurando envio do formulário de newsletter
-  document
-    .querySelector('footer form.newsletter-form')
-    .addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      alert("Submitou formulário de newsletter");
     })
   ;
 
@@ -271,4 +268,39 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   ;
 
+
+
+  // Newsletter
+  // Configurando envio do formulário de newsletter
+  document
+    .querySelector('footer form.newsletter-form')
+    .addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      alert("Submitou formulário de newsletter");
+    })
+  ;
+
+
+
+  // Mobile
+  // Menu
+  const openMenuMobile = document.querySelector('header .menu-mobile-btn');
+  const closeMenuMobile = document.querySelector('header .close-menu-mobile-btn');
+  const menuMobile = document.querySelector('header .menu-mobile');
+
+  openMenuMobile.addEventListener("click", (event) => {
+    event.currentTarget.classList.add("opened");
+    menuMobile.classList.add("opened")
+  });
+
+  closeMenuMobile.addEventListener("click", (event) => {
+    menuMobile.classList.remove("opened");
+    openMenuMobile.classList.remove("opened");
+  });
+
+  menuMobile.addEventListener("click", (event) => {
+    event.currentTarget.classList.remove("opened");
+    openMenuMobile.classList.remove("opened");
+  });
 });

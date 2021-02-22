@@ -151,8 +151,8 @@
 
     <header>
       <div class="container">
-        <a href="">
-          <svg width="131" height="44" viewBox="0 0 131 44" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo">
+        <a href="" class="logo">
+          <svg width="131" height="44" viewBox="0 0 131 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M50.0903 26.8224V12.7174C50.0903 12.0915 50.4747 11.6965 51.0777 11.6965C51.6807 11.6965 52.065 12.0915 52.065 12.7174V18.6997H60.759V12.7174C60.759 12.0915 61.1433 11.6965 61.7463 11.6965C62.3493 11.6965 62.7337 12.0915 62.7337 12.7174V26.8224C62.7337 27.4483 62.3511 27.8432 61.7463 27.8432C61.1416 27.8432 60.759 27.4483 60.759 26.8224V20.4751H52.065V26.8224C52.065 27.4483 51.6807 27.8432 51.0777 27.8432C50.4747 27.8432 50.0903 27.4483 50.0903 26.8224Z"
               fill="white"
@@ -412,7 +412,7 @@
           </svg>
         </a>
 
-        <nav>
+        <nav class="menu-desktop">
           <ul>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#servicos">Serviços</a></li>
@@ -423,7 +423,33 @@
           <a href="#proposta" class="btn-primary proposta">Solicitar proposta</a>
           <button type="button" class="btn-secondary contato">Contato</button>
         </nav>
+
+        <button class="menu-mobile-btn">
+          <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 14V16H2V14H13ZM18 7V9H0V7H18ZM16 0V2H5V0H16Z" fill="white"/>
+          </svg>
+        </button>
       </div>
+      
+      <nav class="menu-mobile">
+        <div class="container">
+          <button class="close-menu-mobile-btn">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.99999 5.58623L11.95 0.63623L13.364 2.05023L8.41399 7.00023L13.364 11.9502L11.95 13.3642L6.99999 8.41423L2.04999 13.3642L0.635986 11.9502L5.58599 7.00023L0.635986 2.05023L2.04999 0.63623L6.99999 5.58623Z" fill="white"/>
+            </svg>
+          </button>
+
+          <ul class="nav-list">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#parceiros">Parceiros</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+          </ul>
+
+          <a href="#proposta" class="btn-primary proposta">Solicitar proposta</a>
+          <button type="button" class="btn-secondary contato">Contato</button>
+        </div>
+      </nav>
     </header>
 
     <section class="s-banner">
@@ -474,7 +500,7 @@
     <section class="s-sobre opened-o-que" id="sobre">
       <div class="container">
         <div class="left">
-          <div class="video-thumb" data-video-id="ThiCMd5kGbE" data-aos="fade-right" data-aos-once="true">
+          <div class="video-thumb" data-video-id="M7lc1UVf-VE" data-aos="fade-right" data-aos-once="true">
             <img src="./img/s-sobre-img01.png" alt="Thumbnail do vídeo institucional" class="thumb">
             <img src="./img/play-circle.svg" alt="Ícone do play" class="play-icon">
           </div>
@@ -505,6 +531,66 @@
             </p>
   
             <a href="#proposta" class="btn-primary">Solicitar Proposta</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="s-sobre-mobile" id="sobre">
+      <div class="slide-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide o-que-wrapper">
+            <div class="container">
+              <div class="video-thumb" data-video-id="M7lc1UVf-VE" data-aos="fade-up" data-aos-once="true">
+                <img src="./img/s-sobre-img01.png" alt="Thumbnail do vídeo institucional" class="thumb">
+                <img src="./img/play-circle.svg" alt="Ícone do play" class="play-icon">
+              </div>
+    
+              <h1 class="title" data-aos="fade-up" data-aos-once="true">
+                <button type="button" class="prev-slide">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.0466 20L26.2966 28.25L23.94 30.6066L13.3333 20L23.94 9.39331L26.2966 11.75L18.0466 20Z" fill="#F4F4F4"/>
+                  </svg>
+                </button>
+                O que fazemos
+                <button type="button" class="next-slide">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.9533 20L13.7033 11.75L16.06 9.39336L26.6667 20L16.06 30.6067L13.7033 28.25L21.9533 20Z" fill="#F4F4F4"/>
+                    </svg>
+                </button>  
+              </h1>
+              <p class="description" data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis tempor habitasse vestibulum a ornare. Ultricies scelerisque semper ullamcorper laoreet eget. Ipsum felis iaculis in sit euismod euismod dolor metus. Proin odio mi mauris sed cum dictumst. Sed felis, sapien, auctor feugiat hac adipiscing.
+              </p>
+    
+              <a href="#proposta" class="btn-primary" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Solicitar Proposta</a>
+            </div>
+          </div>
+  
+          <div class="swiper-slide como-wrapper">
+            <div class="container">
+              <img src="./img/s-sobre-img02.png" alt="Thumbnail do vídeo institucional">
+    
+              <h1 class="title">
+                <button type="button" class="prev-slide">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.0466 20L26.2966 28.25L23.94 30.6066L13.3333 20L23.94 9.39331L26.2966 11.75L18.0466 20Z" fill="#F4F4F4"/>
+                  </svg>
+                </button>
+                Como  fazemos
+                <button type="button" class="next-slide">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.9533 20L13.7033 11.75L16.06 9.39336L26.6667 20L16.06 30.6067L13.7033 28.25L21.9533 20Z" fill="#F4F4F4"/>
+                    </svg>
+                </button>  
+              </h1>
+              
+              <p class="description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis tempor habitasse vestibulum a ornare. Ultricies scelerisque semper ullamcorper laoreet eget. Ipsum felis iaculis in sit euismod euismod dolor metus. Proin odio mi mauris sed cum dictumst. Sed felis, sapien, auctor feugiat hac adipiscing.
+              </p>
+    
+              <a href="#proposta" class="btn-primary">Solicitar Proposta</a>
+            </div>
           </div>
         </div>
       </div>
@@ -857,35 +943,35 @@
         
         <dl class="faq-container">
           <dt class="faq-title" data-aos="fade-up" data-aos-once="true">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span>
           </dt>
           <dd class="faq-content" data-aos="fade-up" data-aos-once="true">
             Consectetur enim tristique bibendum quis. Vitae sed pretium senectus ipsum curabitur. Gravida faucibus nibh a massa dictum duis netus condimentum fusce. Amet sapien sit molestie sapien ut non mauris tellus. Enim amet, mi massa sagittis quisque in. Urna blandit rhoncus quam non.
           </dd>
 
           <dt class="faq-title" data-aos="fade-up" data-aos-once="true">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span>
           </dt>
           <dd class="faq-content">
             Consectetur enim tristique bibendum quis. Vitae sed pretium senectus ipsum curabitur. Gravida faucibus nibh a massa dictum duis netus condimentum fusce. Amet sapien sit molestie sapien ut non mauris tellus. Enim amet, mi massa sagittis quisque in. Urna blandit rhoncus quam non.
           </dd>
 
           <dt class="faq-title" data-aos="fade-up" data-aos-once="true">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span>
           </dt>
           <dd class="faq-content">
             Consectetur enim tristique bibendum quis. Vitae sed pretium senectus ipsum curabitur. Gravida faucibus nibh a massa dictum duis netus condimentum fusce. Amet sapien sit molestie sapien ut non mauris tellus. Enim amet, mi massa sagittis quisque in. Urna blandit rhoncus quam non.
           </dd>
 
           <dt class="faq-title" data-aos="fade-up" data-aos-once="true">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span>
           </dt>
           <dd class="faq-content">
             Consectetur enim tristique bibendum quis. Vitae sed pretium senectus ipsum curabitur. Gravida faucibus nibh a massa dictum duis netus condimentum fusce. Amet sapien sit molestie sapien ut non mauris tellus. Enim amet, mi massa sagittis quisque in. Urna blandit rhoncus quam non.
           </dd>
 
           <dt class="faq-title" data-aos="fade-up" data-aos-once="true">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span>
           </dt>
           <dd class="faq-content">
             Consectetur enim tristique bibendum quis. Vitae sed pretium senectus ipsum curabitur. Gravida faucibus nibh a massa dictum duis netus condimentum fusce. Amet sapien sit molestie sapien ut non mauris tellus. Enim amet, mi massa sagittis quisque in. Urna blandit rhoncus quam non.
@@ -1284,7 +1370,7 @@
         <div class="copy">
           <p>© HESTIA 2021. All rights reserved.</p>
 
-          <p>Carefully designed by <a href="">Firebrains</a></p>
+          <p>Carefully designed by <a href="http://firebrains.com.br/">Firebrains</a></p>
         </div>
       </div>
     </footer>

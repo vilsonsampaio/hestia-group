@@ -166,3 +166,49 @@ footer {
     border-top: solid 2px #404049;
   }
 }
+
+@media (max-width: 1200px) {
+  footer {
+    margin-top: 0;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      gap: 48px;
+
+      h1, p, a {
+        text-align: center;
+      }
+
+      .left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        .social-networks {
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      .middle01 nav ul {
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .right form.newsletter-form {
+        max-width: 264px;
+
+        margin: 0 auto;
+      }
+    }
+
+    .copy {
+      flex-direction: column;
+
+      gap: 12px;
+    }
+  }
+}
