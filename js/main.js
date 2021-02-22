@@ -93,8 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Sidebar
   // Adicionando o abre-fecha da sidebar com formulário de contato
   // Botão pra abrir
-  document
-    .querySelectorAll('header button.contato')
+  [...document.querySelectorAll('.contato'), document.querySelector('a[href="#contato"]')]
     .forEach(element => {
       element.addEventListener('click', (event) => {
         event.preventDefault();

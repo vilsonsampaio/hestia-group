@@ -79,7 +79,7 @@ textarea {
 
 @media (max-width: 1200px) {
   .container {
-    width: 90%;
+    width: 95%;
     max-width: 1158px;
   }
 }
@@ -262,18 +262,20 @@ header .menu-mobile button {
   header .menu-mobile .nav-list {
     display: flex;
     flex-direction: column;
-    gap: 24px;
     margin: 72px 0;
   }
   header .menu-mobile .nav-list li {
     text-align: center;
+  }
+  header .menu-mobile .nav-list li:not(:last-child) {
+    margin-bottom: 24px;
   }
   header .menu-mobile .contato {
     margin-top: 16px;
   }
 }
 .open-form {
-  overflow: hidden;
+  overflow-y: hidden;
 }
 .open-form aside#contact {
   transform: translateX(0%);
@@ -289,9 +291,10 @@ aside#contact {
   align-items: flex-start;
   justify-content: flex-start;
   width: 100%;
-  height: 100vh;
+  height: -webkit-fill-available;
+  min-height: 100vh;
   max-width: 552px;
-  padding: 25px 50px;
+  padding: 30px 50px;
   background-color: #ffffff;
   transform: translateX(100%);
   overflow: auto;
@@ -299,7 +302,9 @@ aside#contact {
   z-index: 40;
 }
 aside#contact .close-button {
-  margin-left: auto;
+  position: absolute;
+  top: 10px;
+  right: 20px;
 }
 aside#contact .tab-nav-container {
   width: 100%;
@@ -489,7 +494,7 @@ aside#contact form.sidebar-form .submit-container .btn-form {
   }
   .s-banner .container {
     margin-top: auto;
-    margin-bottom: 134px;
+    margin-bottom: 100px;
   }
   .s-banner h1 {
     font-size: 32px;
@@ -916,13 +921,15 @@ aside#contact form.sidebar-form .submit-container .btn-form {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 14px;
   margin-top: 64px;
+}
+.s-parceiros .slide-parceiros .swiper-slide .text .partner-services-icons > svg:not(:last-child) {
+  margin-right: 14px;
 }
 
 @media (max-width: 1200px) {
   .s-parceiros .slide-parceiros .chevron-left, .s-parceiros .slide-parceiros .chevron-right {
-    top: 25%;
+    top: 30vw;
   }
   .s-parceiros .slide-parceiros .chevron-left {
     left: 0;
@@ -1113,18 +1120,21 @@ aside#contact form.sidebar-form .submit-container .btn-form {
   }
   .s-depoimentos .testimonials-container {
     padding: 0;
+    margin-top: 32px;
   }
   .s-depoimentos .testimonials-group {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 24px;
   }
   .s-depoimentos .testimonials-group .testimonial {
     width: 95% !important;
     height: auto !important;
     margin-top: 0 !important;
+  }
+  .s-depoimentos .testimonials-group .testimonial:not(:last-child) {
+    margin-bottom: 24px;
   }
   .s-depoimentos .swiper-pagination {
     position: relative;
@@ -1209,7 +1219,7 @@ aside#contact form.sidebar-form .submit-container .btn-form {
 .s-proposta .invoice-form .conditional-inputs {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  gap: 12px;
   margin-top: 24px;
   transition: all 0.3s ease;
 }
@@ -1335,9 +1345,14 @@ aside#contact form.sidebar-form .submit-container .btn-form {
     display: none;
   }
 }
+@media (max-width: 500px) {
+  .s-proposta .invoice-form .conditional-inputs label {
+    max-width: 120px;
+  }
+}
 footer {
   margin-top: 83px;
-  background: #27272A;
+  background: #27272a;
 }
 footer .container {
   display: flex;
@@ -1345,8 +1360,9 @@ footer .container {
   align-items: flex-start;
   justify-content: flex-start;
 }
-footer p, footer a {
-  color: #D9DBE1;
+footer p,
+footer a {
+  color: #d9dbe1;
 }
 footer .content {
   display: grid;
@@ -1357,7 +1373,7 @@ footer .content {
 }
 footer .content h1 {
   margin-bottom: 24px;
-  color: #FFF;
+  color: #fff;
   font-size: 20px;
 }
 footer .content .left .logo {
@@ -1375,7 +1391,6 @@ footer .content .left .social-networks {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 12px;
   margin-top: 40px;
 }
 footer .content .left .social-networks .social {
@@ -1384,18 +1399,23 @@ footer .content .left .social-networks .social {
   justify-content: center;
   width: 32px;
   height: 32px;
-  background: #EDD1001A;
+  background: #edd1001a;
   border-radius: 50%;
+}
+footer .content .left .social-networks .social:not(:first-child) {
+  margin-left: 12px;
 }
 footer .content .middle01 nav ul {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 16px;
+}
+footer .content .middle01 nav ul li:not(:first-child) {
+  margin-top: 16px;
 }
 footer .content .middle01 nav ul li a {
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: "Manrope";
   font-weight: 700;
   font-size: 14px;
@@ -1407,7 +1427,7 @@ footer .content .middle01 nav ul li a:hover {
   opacity: 1;
 }
 footer .content .middle02 p {
-  color: #FFFFFF;
+  color: #ffffff;
   opacity: 0.5;
   transition: opacity 0.3s ease;
 }
@@ -1424,8 +1444,8 @@ footer .content .right form.newsletter-form input {
   width: 100%;
   height: 40px;
   padding: 8px 12px;
-  background: #FFFFFF33;
-  color: #FFFFFF;
+  background: #ffffff33;
+  color: #ffffff;
   font-size: 14px;
   line-height: 24px;
   border-radius: 4px;
@@ -1458,10 +1478,14 @@ footer .copy {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 48px;
   }
-  footer .content h1, footer .content p, footer .content a {
+  footer .content h1,
+footer .content p,
+footer .content a {
     text-align: center;
+  }
+  footer .content > div:not(:first-child) {
+    margin-top: 48px;
   }
   footer .content .left {
     display: flex;
@@ -1482,7 +1506,9 @@ footer .copy {
   }
   footer .copy {
     flex-direction: column;
-    gap: 12px;
+  }
+  footer .copy p:last-child {
+    margin-top: 12px;
   }
 }
 .open-gallery {

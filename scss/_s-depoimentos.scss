@@ -170,6 +170,8 @@
 
     .testimonials-container {
       padding: 0;
+
+      margin-top: 32px;
     }
 
     .testimonials-group {
@@ -177,13 +179,17 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 24px;
+      // gap: 24px;
 
       .testimonial {
         width: 95% !important;
         height: auto !important;
 
         margin-top: 0 !important;
+
+        &:not(:last-child) {
+          margin-bottom: 24px;
+        }
       }
     }
 

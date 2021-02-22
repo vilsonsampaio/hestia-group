@@ -105,9 +105,11 @@
           align-items: center;
           justify-content: flex-start;
 
-          gap: 14px;
-
           margin-top: 64px;
+
+          > svg:not(:last-child) {
+            margin-right: 14px;
+          }
         }
       }
     }
@@ -118,7 +120,7 @@
   .s-parceiros {
     .slide-parceiros {
       .chevron-left, .chevron-right {
-        top: 25%;
+        top: 30vw;
       }
 
       .chevron-left {

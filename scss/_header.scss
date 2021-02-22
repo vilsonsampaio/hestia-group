@@ -156,12 +156,15 @@ header {
       .nav-list {
         display: flex;
         flex-direction: column;
-        gap: 24px;
         
         margin: 72px 0;
 
         li {
           text-align: center;
+
+          &:not(:last-child) {
+            margin-bottom: 24px;
+          }
         }
       }
 

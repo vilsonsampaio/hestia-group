@@ -27,7 +27,7 @@
     .conditional-inputs {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
+      gap: 12px;
       
       margin-top: 24px;
 
@@ -192,9 +192,10 @@
       padding: 72px 0;
     }
 
+    
     .invoice-form {
       max-width: initial;
-
+      
       .btn-form {
         max-width: inherit;
 
@@ -204,6 +205,18 @@
 
     .form-image {
       display: none;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .s-proposta {
+    .invoice-form {
+      .conditional-inputs {
+        label {
+          max-width: 120px;
+        }
+      }
     }
   }
 }
