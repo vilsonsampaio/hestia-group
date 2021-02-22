@@ -552,7 +552,7 @@ aside#contact form.sidebar-form .submit-container .btn-form {
   height: 100%;
   background: #edd100;
   z-index: 2;
-  transition: width 0.3s ease-out;
+  transition: width 0.3s ease;
 }
 .s-sobre .container {
   display: grid;
@@ -570,7 +570,7 @@ aside#contact form.sidebar-form .submit-container .btn-form {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 648px;
+  width: 100%;
 }
 .s-sobre .right {
   display: flex;
@@ -590,7 +590,7 @@ aside#contact form.sidebar-form .submit-container .btn-form {
   justify-content: space-between;
   width: 100%;
   margin-top: 18px;
-  transition: transform 0.25s ease-out;
+  transition: all 0.25s ease-out;
 }
 .s-sobre .content .description {
   min-height: 160px;
@@ -609,23 +609,38 @@ aside#contact form.sidebar-form .submit-container .btn-form {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 170px;
-  height: 170px;
+  width: 300px;
+  height: 300px;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.2;
   color: #000000;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease, transform 30s ease;
   outline: none;
 }
 .s-sobre .open-tab-button::after {
   content: "";
   position: absolute;
-  width: 164px;
-  height: 164px;
-  border: solid 1px #000000;
-  border-radius: 50%;
+  width: 234px;
+  height: 234px;
+  background: url("../img/what.svg") center center no-repeat;
+  background-size: cover;
   transition: transform 1s ease;
+}
+.s-sobre .open-tab-button:hover::after {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+.s-sobre .open-tab-button.open-como-button {
+  opacity: 1;
+  pointer-events: initial;
+}
+.s-sobre .open-tab-button.open-como-button::after {
+  background: url("../img/what.svg") center center no-repeat;
+}
+.s-sobre .open-tab-button.open-como-button:hover::after {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
 }
 .s-sobre .open-tab-button.open-o-que-button {
   opacity: 0;
@@ -633,7 +648,11 @@ aside#contact form.sidebar-form .submit-container .btn-form {
   color: #FFF;
 }
 .s-sobre .open-tab-button.open-o-que-button::after {
-  border-color: #FFF;
+  background: url("../img/how.svg") center center no-repeat;
+}
+.s-sobre .open-tab-button.open-o-que-button:hover::after {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
 }
 .s-sobre.opened-o-que::before {
   width: 65%;
@@ -650,17 +669,17 @@ aside#contact form.sidebar-form .submit-container .btn-form {
 .s-sobre.opened-o-que .open-o-que-button {
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
 }
 .s-sobre.opened-o-que .open-o-que-button::after {
-  transform: scale(30);
+  transform: scale(20);
 }
 .s-sobre.opened-como .open-como-button {
   opacity: 0;
   pointer-events: none;
 }
 .s-sobre.opened-como .open-como-button::after {
-  transform: scale(30);
+  transform: scale(20);
 }
 .s-sobre.opened-como::before {
   width: 35%;
